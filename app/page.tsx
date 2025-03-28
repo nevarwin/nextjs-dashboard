@@ -4,16 +4,31 @@ import Link from 'next/link';
 // import styles from '@/app/ui/home.module.css';
 import { lusitana } from '@/app/ui/fonts';
 import Image from 'next/image';
+import Waves from '@/app/ui/waves';
 
 export default function Page() {
     return (
         <main className="flex min-h-screen flex-col p-6">
+            <Waves
+                lineColor="#A2C6FA"
+                backgroundColor="rgba(255, 255, 255, 0.2)"
+                waveSpeedX={0.02}
+                waveSpeedY={0.01}
+                waveAmpX={40}
+                waveAmpY={20}
+                friction={0.9}
+                tension={0.01}
+                maxCursorMove={120}
+                xGap={12}
+                yGap={36}
+                className="absolute inset-0 -z-10"
+            />
             <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
                 <AcmeLogo />
             </div>
             <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
                 <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
-                    <p
+                    <span
                         className={`text-xl text-gray-800 md:text-3xl md:leading-normal ${lusitana.className} antialiased`}
                     >
                         <strong>
@@ -29,7 +44,7 @@ export default function Page() {
                             Next.js Learn Course
                         </a>
                         , brought to you by Vercel.
-                    </p>
+                    </span>
                     <Link
                         href="/login"
                         className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
